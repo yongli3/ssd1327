@@ -288,8 +288,11 @@ class OLED:
 		#self.OLED_Clear(0x00)
 		self.OLED_SetWindows ( Xstart, Ystart, self.OLED_Dis_Column , self.OLED_Dis_Page)
 		Pixels = Image.load()
+		#print Pixels
 		for j in range(0, self.OLED_Dis_Page ):
+			#print 'j = ', j
 			for i in range(0, self.OLED_Dis_Column / 2 ):
+				#print 'i = ', i
 				#print '0 = ',Pixels[2 * i, j] & 0x0f
 				#print '1 = ',Pixels[2 * i + 1, j]
 				Pixels_Color = ((Pixels[2 * i, j] & 0x0f) << 4) | ((Pixels[2 * i + 1, j] & 0x0f) )
